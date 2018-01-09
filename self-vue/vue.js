@@ -6,6 +6,7 @@ function Vue(options){
     Object.keys(this.data).forEach(key=>{
         this.proxyKeys(key);
     })
+    observe(this.data);
     // options.created.call(this);
     new Compile(options.el,this);
 
