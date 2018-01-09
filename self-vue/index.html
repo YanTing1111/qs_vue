@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>自己搭建vue</title>
+</head>
+<body>
+    <!-- <script src="https://cdn.bootcss.com/vue/2.5.13/vue.min.js"></script> -->
+    <!-- vue renderer
+    template -> pre complie
+    vue scope 在网页上加上mvvm的框架 -->
+    <!-- 模板编译 
+        {{}}叫占位符  用正则
+        要进行实时编译 应该是一个node
+        v-model指令：vue的双向绑定-->
+    <div id="app">
+        <h2>{{title}}</h2>
+        <input v-model="name">
+        <h1>{{name}}</h1>
+        <button v-on:click="clickMe">click me!</button>
+    </div>
+    <script src="./compile.js"></script>
+    <script src="./vue.js"></script>
+    <script>
+        const vm = new Vue({
+            el:'#app',
+            data:{
+                title:'hello world',
+                name:'canfoo'
+            },
+            methods:{
+                clickMe(){
+                    this.title = '你好!';
+                }
+            },
+            mounted(){
+                setTimeout(()=>{
+                    this.title = '吃了吗？';
+                },1000)
+            }
+        })
+    </script>
+</body>
+</html>
