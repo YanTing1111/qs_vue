@@ -12,11 +12,23 @@ var a = {};//被代理或被劫持
 // console.log(a.b);
 // console.log(a.b = 234 , a.b);
 
+// Object.defineProperty(a,"b",{
+//     value:3345,
+//     enumerable:false
+// });
+// for(key in a){
+//     console.log(key);
+// }
+// console.log(Object.keys(a));
+
 Object.defineProperty(a,"b",{
-    value:3345,
-    enumerable:false
+    set:function(newValue){
+        console.log('你要赋值给我，我的新值是 ： ' + newValue);
+    },
+    get:function(){
+        console.log('你取我的值');
+        return 1;
+    }
 });
-for(key in a){
-    console.log(key);
-}
-console.log(Object.keys(a));
+console.log(a.b);
+console.log(a.b = 2);
