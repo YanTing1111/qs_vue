@@ -4,10 +4,10 @@
       <el-button size="medium" @click="addComment" nativeType="submit">评论</el-button>
     </el-badge>
     <el-badge class="item" :value="10" :max="9" isDot>
-    <el-button size="small" :disable="saveDisabled" @click="doSave()">发布</el-button>
+      <el-button size="small" :disable="saveDisabled" @click="doSave">发布</el-button>
     </el-badge>
     <el-badge class="item" :value="1" :max="9">
-    <el-button size="mini">前往</el-button>
+      <el-button size="mini">前往</el-button>
     </el-badge>
     
     <!-- <el-button type="primary">发布</el-button>
