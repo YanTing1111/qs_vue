@@ -1,13 +1,19 @@
 <template>
   <div id="app">
+
     <h3>{{$t('login.title')}}</h3>
+    <lang-select class="set-language"></lang-select>
     <router-view/>
   </div>
 </template>
 
 <script>
+import LangSelect from '@/components/LangSelect/index'
 export default {
-  name: 'App'
+  name: 'App',
+  'components':{
+      LangSelect
+  }
 }
 </script>
 

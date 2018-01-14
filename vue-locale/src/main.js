@@ -6,7 +6,7 @@ import router from './router'
 import i18n from './lang'
 import Element from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
-
+import store from './store'
 Vue.use(Element,{
   size:'medium',
   i18n:(key,value)=>i18n.t(key,value)
@@ -19,6 +19,7 @@ new Vue({
   el: '#app',
   router,
   i18n,
+  store,
   components: { App },
   template: '<App/>'
 })

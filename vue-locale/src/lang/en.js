@@ -8,6 +8,7 @@ export default {
     },
     login: {
       title: 'Login Form',
+      switchLanguage:'Switch Language',
       logIn: 'Log in',
       username: 'Username',
       password: 'Password',
