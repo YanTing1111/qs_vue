@@ -114,13 +114,17 @@
         return stack.indexOf(index) >= 0
       },
       prev() {
-        console.log('prev');
-      },
-      next() {
         let width = this.$el.offsetWidth;
         this.temporaryData.poswidth = width;
         this.temporaryData.posheight = 0;
-        this.temporaryData.opacity = 0;
+        this.temporaryData.opacity = '0';
+        this.temporaryData.rotate = '-3';
+      },
+      next() {
+        let width = this.$el.offsetWidth;
+        this.temporaryData.poswidth = -width;
+        this.temporaryData.posheight = 0;
+        this.temporaryData.opacity = '0';
         this.temporaryData.rotate = '3';
       }
       
