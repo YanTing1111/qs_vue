@@ -1,7 +1,7 @@
 <template>
     <ul class="stack">
       <li class="stack-item"
-      :style="[transform(index)]"
+      :style="[transfromIndex(index),transform(index)]"
       v-for="(item, index) in pages">
         <div v-html="item.html"></div>
       </li>
@@ -63,6 +63,19 @@
       }
     },
     methods: {
+      transfromIndex(index){
+        if(index === this.temporaryData.currentPage){
+          let style = {}
+          style['zIndex'] = 10;
+          style['opacity'] = this.temporaryData.opacity;
+          style['transfrom'] = 'translate3D(' + this.temporaryData.poswidth 
+          + 'px' + ',' + this.temporaryData.posheight + 'px' + ',0px) rotate('
+          + this.temporaryData.rotate + 'deg)'
+          style['trsnsitionTimingFunction'] = 'ease';
+          style['transitionDuration'] = '300ms'; 
+          return style;
+        }
+      },
       transform (index) {
         let currentPage = this.temporaryData.currentPage;
         let length = this.pages.length;
@@ -104,7 +117,11 @@
         console.log('prev');
       },
       next() {
-        console.log('next');
+        let width = this.$el.offsetWidth;
+        this.temporaryData.poswidth = width;
+        this.temporaryData.posheight = 0;
+        this.temporaryData.opacity = 0;
+        this.temporaryData.rotate = '3';
       }
       
     }
