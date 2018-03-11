@@ -5,7 +5,7 @@
   "author": "YanTing1111 <1178170499@qq.com>",
   "private": true,
   "scripts": {
-    "dev": "nuxt",
+    "dev": "nodemon -w ./server -w ./start.js --exec node ./start.js",
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
@@ -13,6 +13,12 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
+    "axios": "^0.18.0",
+    "babel-preset-latest-node": "^1.0.0",
+    "babel-preset-stage-3": "^6.24.1",
+    "koa": "^2.5.0",
+    "koa-router": "^7.4.0",
+    "mongoose": "^5.0.9",
     "nuxt": "^1.0.0"
   },
   "devDependencies": {

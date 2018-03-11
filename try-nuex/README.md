@@ -1,3 +1,5 @@
+安装命令 vue init nuxt-community/starter-template try-nuex
+
 # try-nuex
 
 > Nuxt.js project
