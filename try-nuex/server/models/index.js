@@ -11,7 +11,7 @@ mongoose.connection.openUri(mongoUrl).once('open',async() => {
     let userInfo = config.user
     let user = await User.findOne({role:'superAdmin'}).exec()
     if(!user){
-        user= new user(userInfo)
+        user= new User(userInfo)
         await user.save()
         console.log('ok,管理员已生成');
 
